@@ -35,8 +35,8 @@ jobs:
           node-version: 20
           cache: npm
           cache-dependency-path: |
-            action/privacyvote-frontend/package-lock.json
-            action/privacyvote-hardhat/package-lock.json
+            privacyvote-frontend/package-lock.json
+            privacyvote-hardhat/package-lock.json
 
       - name: Compute basePath
         id: bp
@@ -50,11 +50,11 @@ jobs:
           fi
 
       - name: Install deps (frontend)
-        working-directory: action/privacyvote-frontend
+        working-directory: privacyvote-frontend
         run: npm ci --no-audit --no-fund
 
       - name: Build static site
-        working-directory: action/privacyvote-frontend
+        working-directory: privacyvote-frontend
         env:
           NEXT_PUBLIC_STATIC_EXPORT: "true"
           BASE_PATH: ${{ steps.bp.outputs.base_path }}
@@ -65,7 +65,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: action/privacyvote-frontend/out
+          path: privacyvote-frontend/out
 
   deploy:
     needs: build

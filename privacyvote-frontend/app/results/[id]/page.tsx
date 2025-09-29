@@ -11,6 +11,9 @@ import { PrivacyVoteHubABI } from "@/abi/PrivacyVoteHubABI";
 import { PrivacyVoteHubAddresses } from "@/abi/PrivacyVoteHubAddresses";
 import { decryptAggregate } from "@/fhevm/adapter";
 
+export function generateStaticParams() { return []; }
+export const dynamic = "force-static";
+
 export default function ResultsPage() {
   const params = useParams<{ id: string }>();
   const id = Number(params?.id);

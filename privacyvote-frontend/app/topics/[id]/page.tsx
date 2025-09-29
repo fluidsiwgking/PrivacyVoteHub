@@ -7,6 +7,9 @@ import { PrivacyVoteHubABI } from "@/abi/PrivacyVoteHubABI";
 import { PrivacyVoteHubAddresses } from "@/abi/PrivacyVoteHubAddresses";
 import { encryptOneHot } from "@/fhevm/adapter";
 
+export function generateStaticParams() { return []; }
+export const dynamic = "force-static";
+
 export default function TopicDetail() {
   const params = useParams<{ id: string }>();
   const id = Number(params?.id);

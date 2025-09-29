@@ -1,0 +1,1 @@
+export const PrivacyVoteHubAddresses = { "31337": { address: "0x5FbDB2315678afecb367f032d93F642f64180aa3" }, "11155111": { address: "0x7Da4cBB7aEf12f4ebD1EbcD4B6eae00E2934bfF3" } } as const;

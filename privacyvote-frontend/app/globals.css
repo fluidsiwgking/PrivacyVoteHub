@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-medium text-night-900 bg-neon-500 hover:bg-neon-400 transition shadow-glow;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-medium border border-neon-500 text-neon-400 hover:bg-neon-500 hover:text-night-900 transition;
+  }
+  .card {
+    @apply bg-night-800/70 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-lg;
+  }
+  .input {
+    @apply w-full px-4 py-3 rounded-xl bg-night-800/70 border border-white/10 focus:outline-none focus:ring-2 focus:ring-neon-500;
+  }
+}
+
+
+
+

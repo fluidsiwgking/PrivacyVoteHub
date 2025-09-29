@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=./index.html">
+  <title>Not Found</title>
+</head>
+<body>
+  <p>Not Found. Redirecting to <a href="./index.html">index.html</a>…</p>
+  <script>
+    // Preserve path for Next.js client-side routing when hosted under basePath
+    (function() {
+      var l = window.location;
+      var base = (document.querySelector('base') || {}).href || '';
+      if (!base) base = '';
+      var target = base.replace(/\/$/, '') + '/index.html' + (l.search || '') + (l.hash || '');
+      document.location.replace(target);
+    })();
+  </script>
+</body>
+</html>

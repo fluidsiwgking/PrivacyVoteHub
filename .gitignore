@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build outputs
+dist/
+coverage/
+coverage.json
+types/
+
+# Hardhat
+artifacts/
+cache/
+
+# Misc
+.DS_Store
+*.log
+

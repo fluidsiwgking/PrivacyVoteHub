@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 // 静态导出：将该路由在构建时生成为静态文件，便于 GitHub Pages 直接提供
 export const dynamic = "force-static";
-export const revalidate = 60 * 60 * 24; // 24h
+export const revalidate = 86400; // 24h
 
 export async function GET() {
   try {

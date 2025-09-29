@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
+// 静态导出：将该路由在构建时生成为静态文件，便于 GitHub Pages 直接提供
+export const dynamic = "force-static";
+export const revalidate = 60 * 60 * 24; // 24h
+
 export async function GET() {
   try {
     const base = "https://relayer.testnet.zama.cloud";
-    const keyurlRes = await fetch(`${base}/v1/keyurl`, { cache: "no-store" });
+    const keyurlRes = await fetch(`${base}/v1/keyurl`);
     if (!keyurlRes.ok) {
       return NextResponse.json({ error: `keyurl status ${keyurlRes.status}` }, { status: 502 });
     }
@@ -24,8 +28,8 @@ export async function GET() {
     }
 
     const [pkRes, crsRes] = await Promise.all([
-      fetch(publicKeyUrl, { cache: "no-store" }),
-      fetch(publicParamsUrl, { cache: "no-store" }),
+      fetch(publicKeyUrl),
+      fetch(publicParamsUrl),
     ]);
     if (!pkRes.ok || !crsRes.ok) {
       return NextResponse.json({ error: `key fetch failed ${pkRes.status}/${crsRes.status}` }, { status: 502 });

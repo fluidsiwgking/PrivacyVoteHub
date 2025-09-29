@@ -16,6 +16,12 @@ types/
 artifacts/
 cache/
 
+# Env files
+.env
+.env.*
+**/.env
+**/.env.*
+
 # Misc
 .DS_Store
 *.log
